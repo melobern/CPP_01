@@ -1,3 +1,7 @@
+# Editors + my objs repository 
+.vscode
+.idea
+.objs
 # Prerequisites
 *.d
 
