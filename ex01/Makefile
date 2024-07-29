@@ -6,12 +6,12 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/27 13:57:08 by mbernard         ###   ########.fr        #
+#    Updated: 2024/07/29 17:56:50 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 G = g++
-NAME = zombies
+NAME = zombiehorde
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
