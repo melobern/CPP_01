@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 G = g++
-NAME = phonebook
+NAME = zombies
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf

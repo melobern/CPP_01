@@ -16,4 +16,15 @@
 #include <iostream>
 #include <string>
 
+class    Zombie {
+ public:
+    explicit Zombie(std::string name);
+    ~Zombie(void);
+    void announce(void) const;
+
+ private:
+    std::string _name;
+};
+Zombie *newZombie(std::string name);
+void   randomChump(std::string name);
 #endif  // EX00_INCLUDES_ZOMBIE_HPP_

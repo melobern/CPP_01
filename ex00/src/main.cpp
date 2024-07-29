@@ -10,3 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/Zombie.hpp"
+
+int main() {
+    Zombie *zombie = new Zombie("Simple");
+    zombie->announce();
+    delete zombie;
+    Zombie *glouglou = new Zombie("glouglou");
+    glouglou->announce();
+    delete glouglou;
+    randomChump("randomChump ONE");
+    zombie = newZombie("newZombie");
+    zombie->announce();
+    delete zombie;
+    randomChump("randomChump TWO");
+    return 0;
+}
