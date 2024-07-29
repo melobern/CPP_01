@@ -13,6 +13,7 @@
 #ifndef EX01_INCLUDES_ZOMBIE_HPP_
 #define EX01_INCLUDES_ZOMBIE_HPP_
 
+#include <limits.h>
 #include <iostream>
 #include <string>
 #include <cstdlib>

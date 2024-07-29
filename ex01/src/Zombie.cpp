@@ -19,7 +19,7 @@ Zombie::Zombie(void) {
 
 Zombie::Zombie(std::string name) {
     this->_name = name;
-    std::cout << this->_name << " appeared and was named" << std::endl;
+    std::cout << this->_name << " appeared" << std::endl;
     return;
 }
 

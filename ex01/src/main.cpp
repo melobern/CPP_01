@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "../includes/Zombie.hpp"
 
 int main(int ac, char **av) {
@@ -19,9 +20,15 @@ int main(int ac, char **av) {
         return (1);
     }
     int N = std::atoi(av[1]);
+    if (N < 1 || N > 100000) {
+        std::cout << "Number of zombies must be between 0 and 100000";
+        std::cout << std::endl;
+        return (1);
+    }
     Zombie *horde = zombieHorde(N, av[2]);
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++) {
         horde[i].announce();
-    delete [] horde;
+    }
+    delete[] horde;
     return (0);
 }
