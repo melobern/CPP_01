@@ -12,28 +12,23 @@
 
 #include "../includes/HumanA.hpp"
 
-Zombie::Zombie(void) {
-    std::cout << "An unamed zombie appeared" << std::endl;
+HumanA::HumanA(const std::string name, const Weapon &weapon)
+    : _name(name), _weapon(weapon) {
+    std::cout << this->_name << " entered the realm." << std::endl;
     return;
 }
 
-Zombie::Zombie(std::string name) {
-    this->_name = name;
-    std::cout << this->_name << " appeared" << std::endl;
+HumanA::~HumanA(void) {
+    std::cout << this->_name << " left the realm." << std::endl;
     return;
 }
 
-Zombie::~Zombie() {
-    std::cout << this->_name << " is dead" << std::endl;
+void HumanA::attack(void) const {
+    std::cout << this->_name;
+    std::cout << " attacks with their ";
+    std::cout << this->_weapon.getType();
+    std::cout << std::endl;
     return;
 }
 
-void Zombie::announce(void) const {
-    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-    return;
-}
 
-void Zombie::setName(std::string name) {
-    this->_name = name;
-    return;
-}

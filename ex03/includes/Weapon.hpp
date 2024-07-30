@@ -20,14 +20,13 @@
 
 class    Weapon {
  public:
-    Zombie(void);
-    explicit Zombie(std::string name);
-    ~Zombie(void);
-    void announce(void) const;
-    void setName(std::string name);
+    Weapon(void);
+    explicit Weapon(std::string name);
+    ~Weapon(void);
+    const std::string &getType(void) const;
+    void setType(std::string type);
  private:
-    std::string _name;
+    std::string _type;
 };
-Zombie *zombieHorde(int N, std::string name);
 
 #endif  // EX03_INCLUDES_WEAPON_HPP_
