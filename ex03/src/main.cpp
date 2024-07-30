@@ -11,24 +11,26 @@
 /* ************************************************************************** */
 
 
-#include "../includes/Zombie.hpp"
+#include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
 
-int main(int ac, char **av) {
-    if (ac != 3) {
-        std::cout << "Usage: ./zombieHorde (number of zombies) (name)";
-        std::cout << std::endl;
-        return (1);
+int main() { {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    } {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.attack();
+        jim.setWeapon(club);
+        jim.attack();
+        Weapon redClub = Weapon("red club");
+        jim.setWeapon(redClub);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
     }
-    int N = std::atoi(av[1]);
-    if (N < 1 || N > 100000) {
-        std::cout << "Number of zombies must be between 0 and 100000";
-        std::cout << std::endl;
-        return (1);
-    }
-    Zombie *horde = zombieHorde(N, av[2]);
-    for (int i = 0; i < N; i++) {
-        horde[i].announce();
-    }
-    delete[] horde;
-    return (0);
+    return 0;
 }

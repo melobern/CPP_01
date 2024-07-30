@@ -17,17 +17,17 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include "../includes/Weapon.hpp"
 
 class    HumanB {
  public:
-    Zombie(void);
-    explicit Zombie(std::string name);
-    ~Zombie(void);
-    void announce(void) const;
-    void setName(std::string name);
+    explicit HumanB(std::string name);
+    ~HumanB(void);
+    void attack(void) const;
+    void setWeapon(Weapon &weapon);
  private:
-    std::string _name;
+    std::string const _name;
+    Weapon            *_weapon;
 };
-Zombie *zombieHorde(int N, std::string name);
 
 #endif  // EX03_INCLUDES_HUMANB_HPP_

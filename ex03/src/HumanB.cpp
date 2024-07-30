@@ -12,13 +12,33 @@
 
 #include "../includes/HumanB.hpp"
 
-Zombie *zombieHorde(int N, std::string name) {
-    if (N < 1)
-        return NULL;
-    Zombie *horde = new Zombie[N];
-    for (int i = 0; i < N; i++) {
-        horde[i].setName(name);
-        std::cout << name << " was given a name" << std::endl;
+HumanB::HumanB(const std::string name)
+    : _name(name), _weapon(0) {
+    std::cout << this->_name << " entered the realm." << std::endl;
+    return;
+}
+
+HumanB::~HumanB(void) {
+    std::cout << this->_name << " left the realm." << std::endl;
+    return;
+}
+
+void HumanB::attack(void) const {
+    if (this->_weapon == 0) {
+        std::cout << this->_name;
+        std::cout << " tried to attack without success.";
+        std::cout << " He has no weapon.";
+        std::cout << std::endl;
+        return;
     }
-    return (horde);
+    std::cout << this->_name;
+    std::cout << " attacks with their ";
+    std::cout << this->_weapon->getType();
+    std::cout << std::endl;
+    return;
+}
+
+void HumanB::setWeapon(Weapon &weapon) {
+    this->_weapon = &weapon;
+    return;
 }
