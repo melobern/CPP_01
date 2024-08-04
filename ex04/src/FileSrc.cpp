@@ -22,21 +22,8 @@ FileSrc::~FileSrc() {
     return;
 }
 
-static bool is_regular_file(const char *path)
-{
-    struct stat path_stat;
-
-    stat(path, &path_stat);
-    return (S_ISREG(path_stat.st_mode));
-}
-
 void FileSrc::open_file(const std::string name, const std::ios_base::openmode mode) {
 
-        if (!is_regular_file(name.c_str())) {
-            std::cout << "Error:"<< std::endl;
-            std::cout << name << " is not a regular file."<< std::endl;
-            exit(1);
-        }
         this->file_src.open(name.c_str(), mode);
         if (!this->file_src.is_open()) {
             std::cout << "Error: "<< std::endl;
