@@ -17,7 +17,6 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
-#include <sys/stat.h>
 
 class FileSrc {
   public:
