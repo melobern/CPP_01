@@ -6,11 +6,11 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/29 19:07:57 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/12 16:30:27 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-G = g++
+C = c++
 NAME = hi_brain
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 MKDIR = mkdir -p
@@ -28,10 +28,10 @@ OBJS = $(addprefix ${OBJS_DIR}, $(addsuffix .o, ${SRCS}))
 all: ${NAME} ${OBJS} | ${OBJS_DIR} Makefile
 
 ${NAME}: ${OBJS} Makefile
-	${G} ${CFLAGS} ${OBJS} ${INCLUDES} -o $@
+	${C} ${CFLAGS} ${OBJS} ${INCLUDES} -o $@
 
 ${OBJS_DIR}%.o: ${SRC_DIR}%.cpp Makefile | ${OBJS_DIR}
-	${G} ${CFLAGS} -c $< -o $@
+	${C} ${CFLAGS} -c $< -o $@
 
 # ---------------------------------- Create Repertory ---------------------- #
 ${OBJS_DIR}:
