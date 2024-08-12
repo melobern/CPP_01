@@ -6,7 +6,7 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/12 16:31:37 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/12 17:58:21 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ MKDIR = mkdir -p
 RMDIR = rm -rf
 
 # ---------------------------------- Sources --------------------------------- #
-HEADER = FileSrc
-SRCS = main FileSrc
+HEADER = FileSrc Replacer
+SRCS = main FileSrc Replacer
 
 # ---------------------------------- Repertories ----------------------------- #
 HEADERS_DIR = includes/
