@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 16:38:48 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/12 16:42:38 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/12 18:09:45 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ class Replacer {
   public:
     Replacer(std::string s1, std::string s2);
     ~Replacer();
-    void replace(std::string s1, std::string s2);
+    void replace(std::ifstream &file_src, std::ofstream &file_dest);
   private:
     std::string src;
     std::string dest;
     std::string all;
-    void replace(std::string s1, std::string s2);
 };
 #endif  // EX04_INCLUDES_REPLACER_HPP_
