@@ -1,35 +1,32 @@
 /* Copyright 2024 <mbernard>************************************************* */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileSrc.hpp                                        :+:      :+:    :+:   */
+/*   Replacer.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 17:17:15 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/12 15:15:59 by mbernard         ###   ########.fr       */
+/*   Created: 2024/08/12 16:38:48 by mbernard          #+#    #+#             */
+/*   Updated: 2024/08/12 16:42:38 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX04_INCLUDES_FILESRC_HPP_
-#define EX04_INCLUDES_FILESRC_HPP_
+#ifndef EX04_INCLUDES_REPLACER_HPP_
+#define EX04_INCLUDES_REPLACER_HPP_
 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <cstdlib>
 
-class FileSrc {
+class Replacer {
   public:
-    FileSrc(std::string filename);
-    ~FileSrc();
-    void create_new_file(std::string s1, std::string s2);
+    Replacer(std::string s1, std::string s2);
+    ~Replacer();
+    void replace(std::string s1, std::string s2);
   private:
-    std::string filename;
-    std::string file_replace;
-    std::ifstream file_src;
-    std::ofstream file_dest;
-    void open_in(std::string name);
-    void open_out(std::string name);
+    std::string src;
+    std::string dest;
+    std::string all;
     void replace(std::string s1, std::string s2);
 };
-#endif  // EX04_INCLUDES_FILESRC_HPP_
+#endif  // EX04_INCLUDES_REPLACER_HPP_

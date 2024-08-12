@@ -6,11 +6,11 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/07/29 17:56:50 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/12 16:31:37 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-G = g++
+C = c++
 NAME = sed_is_for_losers
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
@@ -33,10 +33,10 @@ DEPS = ${OBJS:.o=.d}
 all: ${NAME} ${OBJS} | ${OBJS_DIR} Makefile
 
 ${NAME}: ${OBJS} Makefile
-	${G} ${CFLAGS} ${OBJS} ${INCLUDES} -o $@
+	${C} ${CFLAGS} ${OBJS} ${INCLUDES} -o $@
 
 ${OBJS_DIR}%.o: ${SRC_DIR}%.cpp ${HEADERS} Makefile | ${OBJS_DIR}
-	${G} ${CFLAGS} ${INCLUDES} -c $< -o $@
+	${C} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
 -include ${DEPS}
 # ---------------------------------- Create Repertory ---------------------- #
