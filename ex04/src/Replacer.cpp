@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 16:38:50 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/12 18:10:15 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/12 19:39:29 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void Replacer::replace(std::ifstream &file_src, std::ofstream &file_dest) {
     while (pos != std::string::npos) {
         
     }
-
+    file_dest << content;
 }
 
