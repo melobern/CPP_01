@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 17:15:50 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/12 18:06:10 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/13 09:10:09 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,19 @@ bool FileSrc::open_out(const std::string name) {
         return (1);
 }
 
-void FileSrc::close_fds() {
-    this->file_src.close();
-    this->file_dest.close();
- }
-
 void FileSrc::create_new_file(const std::string s1, const std::string s2) {
     Replacer replacer(s1, s2);
+    std::stringstream content;
 
     if (!this->open_in(this->filename))
-        return ;
-    if (!this->open_out(this->file_replace)) {
-        this->file_src.close();
-        return ;
-    }
-    replacer.replace(this->file_src, this->file_dest);
-    this->close_fds();
+        return;
+    content << this->file_src.rdbuf();
+    this->file_src.close();
+    if (!this->open_out(this->file_replace))
+        return;
+    if (!content.str().empty())
+        replacer.replace(content.str(), this->file_dest);
+    else
+        std::cout << "This file is empty" << std::endl;
+    this->file_dest.close();
 }
