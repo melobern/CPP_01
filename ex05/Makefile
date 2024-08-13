@@ -6,12 +6,12 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/21 13:44:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/13 09:17:02 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/13 11:21:32 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
-NAME = Harl_2.0
+NAME = Harl
 CFLAGS = -Wall -Wextra -Werror -MMD -MP -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
