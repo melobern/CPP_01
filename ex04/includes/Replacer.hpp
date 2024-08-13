@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 16:38:48 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/12 18:09:45 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/13 09:12:03 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 #include <cstdlib>
 
 class Replacer {
-  public:
+ public:
     Replacer(std::string s1, std::string s2);
     ~Replacer();
-    void replace(std::ifstream &file_src, std::ofstream &file_dest);
-  private:
+    void replace(std::string content, std::ofstream &file_dest);
+ private:
     std::string src;
     std::string dest;
     std::string all;
